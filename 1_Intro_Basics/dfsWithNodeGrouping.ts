@@ -48,3 +48,5 @@ console.assert(result.components.filter(c => c === 1).length === 2);
 console.assert(result.components.filter(c => c === 2).length === 3);
 // Four nodes in group 3
 console.assert(result.components.filter(c => c === 3).length === 4);
+// All nodes were visited
+console.assert(visited.every(n => n));

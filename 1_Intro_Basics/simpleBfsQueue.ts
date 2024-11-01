@@ -34,6 +34,7 @@ export const simpleBfsQueue = (graph: number[][], start: number) => {
 
   // When the node is run out, the queue should be empty and 
   // all nodes visited.
+  console.assert(visited.every(n => n));
 }
 
 simpleBfsQueue(graph, 0);

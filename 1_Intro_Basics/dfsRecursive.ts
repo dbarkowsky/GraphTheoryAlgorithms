@@ -25,3 +25,6 @@ const depthFirstSearch = (at: number) => {
 }
 
 depthFirstSearch(start);
+
+// All nodes should be visited at this point.
+console.assert(visited.every(n => n));
