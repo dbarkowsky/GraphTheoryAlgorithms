@@ -1,6 +1,6 @@
 /**
  * Just a simple tree containing a set of unique numbers.
- * No refernces to parent.
+ * No references to parent.
  */
 export const treeOfNumbers = {
   5: [4, 3],
@@ -13,6 +13,25 @@ export const treeOfNumbers = {
   6: [],
   10: [], 
   8: [],
+}
+
+/**
+ * Just a simple tree containing a set of unique numbers.
+ * All keys are in order.
+ * Bidirectional edges
+ */
+export const treeOfNumbersSequential = {
+  4: [3, 2],
+  3: [0, 5, 4],
+  0: [1, 9, 3],
+  1: [0],
+  9: [0],
+  2: [6, 10, 4],
+  7: [8],
+  6: [2],
+  10: [2], 
+  8: [7],
+  5:[3]
 }
 
 /**

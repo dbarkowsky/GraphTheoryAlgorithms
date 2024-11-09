@@ -41,6 +41,6 @@ const buildTree = (tree: Record<number, number[]>, currentNode: TreeNode, parent
 
 // We start at the node with value 3 this time.
 // It's a little unbalanced, but it shows that the function
-// remade the tree.
+// remade the tree with 3 as the root.
 const result = rootTree(treeOfNumbersWithParents, 3);
 console.log(result)
