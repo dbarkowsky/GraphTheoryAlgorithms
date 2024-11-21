@@ -6,7 +6,7 @@
 import { treeOfNumbersWithParents } from "./treeOfNumbers.ts";
 
 // A tree node
-class TreeNode {
+export class TreeNode {
   id: number;
   parent: TreeNode | undefined;
   children: TreeNode[];
@@ -17,7 +17,7 @@ class TreeNode {
   }
 }
 
-const rootTree = (tree: Record<number, number[]>, startingId: number) => {
+export const rootTree = (tree: Record<number, number[]>, startingId: number) => {
   const root = new TreeNode(startingId);
   return buildTree(tree, root);
 }
@@ -43,4 +43,8 @@ const buildTree = (tree: Record<number, number[]>, currentNode: TreeNode, parent
 // It's a little unbalanced, but it shows that the function
 // remade the tree with 3 as the root.
 const result = rootTree(treeOfNumbersWithParents, 3);
-console.log(result)
+console.assert(result.id === 3)
+// Should have 3 children
+console.assert(result.children.length === 3)
+// But no parent
+console.assert(result.parent == null)
