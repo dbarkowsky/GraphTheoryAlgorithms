@@ -25,7 +25,7 @@ export const createWeightedAdjacencyList = (): DagEdge[][] => [
   [{to: 1, weight: 3},  {to: 2, weight: 6}], // A,0
   [{to: 2, weight: 4}, {to: 3, weight: 4}, {to: 4, weight: 11}], // B,1
   [{to: 3, weight: 8}, {to: 6, weight: 11}], // C,2
-  [{to: 4, weight: -4}, {to: 5, weight: 5}, {to: 6, weight: 2}], // D,3
+  [{to: 4, weight: 4}, {to: 5, weight: 5}, {to: 6, weight: 2}], // D,3
   [{to: 7, weight: 9}], // E,4
   [{to: 7, weight: 1}], // F,5
   [{to: 7, weight: 2}], // G,6

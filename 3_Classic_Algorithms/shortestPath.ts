@@ -43,4 +43,5 @@ console.assert(result.at(-1) == 11)
 const invertedGraph = createWeightedAdjacencyList().map(node => node.map(edge => ({ ...edge, weight: edge.weight! * -1 })));
 const invertedResult = getShortestPaths(invertedGraph);
 const longestPaths = invertedResult.map(distance => distance * -1)
-console.log(longestPaths)
+console.assert(longestPaths.at(0) == 0)
+console.assert(longestPaths.at(-1) == 28)
