@@ -3,14 +3,14 @@
  * Only works on Directional Acyclic Graphs (DAGs)
  */
 
-import { createAdjacencyList } from "./trees.ts";
+import { createAdjacencyList, DagEdge } from "./trees.ts";
 
 /**
  * Expects a adjacency list.
  * @param graph
  * @returns List of numbers indicating positions of nodes in graph.
  */
-const topologicalSort = (graph: number[][]) => {
+export const topologicalSort = (graph: DagEdge[][]) => {
   const num_nodes = graph.length;
   const visited = Array(num_nodes).fill(false);
   const ordering: number[] = []; // This will be the final order we determine
@@ -31,15 +31,15 @@ const dfs = (
   at: number,
   visited: boolean[],
   ordering: number[],
-  graph: number[][]
+  graph: DagEdge[][]
 ) => {
   // We've now visited this node
   visited[at] = true;
   const edges = graph[at];
   // For any edges, if not visited, continue dfs
   edges.forEach((edge) => {
-    if (!visited[edge]) {
-      dfs(edge, visited, ordering, graph);
+    if (!visited[edge.to]) {
+      dfs(edge.to, visited, ordering, graph);
     }
   });
   ordering.unshift(at); // Stick this node to near end of ordering list. 
