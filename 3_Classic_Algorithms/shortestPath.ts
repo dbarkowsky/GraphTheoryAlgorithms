@@ -36,3 +36,11 @@ const result = getShortestPaths(createWeightedAdjacencyList());
 console.assert(result.length == 8);
 console.assert(result.at(0) == 0)
 console.assert(result.at(-1) == 11)
+
+
+// What if we want the longest paths?
+// Just invert the edge costs and run it again. Invert responses
+const invertedGraph = createWeightedAdjacencyList().map(node => node.map(edge => ({ ...edge, weight: edge.weight! * -1 })));
+const invertedResult = getShortestPaths(invertedGraph);
+const longestPaths = invertedResult.map(distance => distance * -1)
+console.log(longestPaths)
