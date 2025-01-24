@@ -31,3 +31,18 @@ export const createWeightedAdjacencyList = (): DagEdge[][] => [
   [{to: 7, weight: 2}], // G,6
   [], // H,7
 ]
+
+// Same idea but with negative weights
+// There are two nodes here in a negative cycle (2,3), but two more affected by it (4,9)
+export const createWeightedAdjacencyListWithNegatives = (): DagEdge[][] => [
+  [{to: 1, weight: 5}], // 0
+  [{to: 2, weight: 20}, {to: 5, weight: 30}, {to: 6, weight: 60}], // 1
+  [{to: 3, weight: 10}, {to: 4, weight: 75}], // 2
+  [{to: 2, weight: -15},], // 3
+  [{to: 9, weight: 100},], // 4
+  [{to: 4, weight: 25}, {to: 6, weight: 5}, {to: 8,weight: 50}], // 5
+  [{to: 7, weight: -50},], // 6
+  [{to: 8, weight: -10}], // 7
+  [], // 8
+  [], // 9
+]
