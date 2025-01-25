@@ -33,6 +33,7 @@ export const createWeightedAdjacencyList = (): DagEdge[][] => [
 ]
 
 // Same idea but with negative weights
+// Not really a tree, but still a graph.
 // There are two nodes here in a negative cycle (2,3), but two more affected by it (4,9)
 export const createWeightedAdjacencyListWithNegatives = (): DagEdge[][] => [
   [{to: 1, weight: 5}], // 0
