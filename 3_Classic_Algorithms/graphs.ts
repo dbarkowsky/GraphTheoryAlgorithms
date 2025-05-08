@@ -28,3 +28,33 @@ export const createGraphForBridgeArticulationPoint = () => {
 
   return adj;
 }
+
+/**
+ * Creates a directed graph for Tarjan's algorithm.
+ * The graph is represented as an adjacency list, where each index represents a node and the value at that index is an array of its neighbors.
+ * @returns A directed graph with 8 nodes and edges between them.
+ */
+export const createGraphForTarjans = () => {
+  const V = 8;
+  const adj: number[][] = Array.from({ length: V }, () => []);
+
+  function addDirectedEdge(u: number, v: number) {
+    adj[u].push(v);
+  }
+
+  addDirectedEdge(0, 1);
+  addDirectedEdge(1, 2);
+  addDirectedEdge(2, 0);
+  addDirectedEdge(3, 4);
+  addDirectedEdge(3, 7);
+  addDirectedEdge(4, 5);
+  addDirectedEdge(5, 6);
+  addDirectedEdge(5, 0);
+  addDirectedEdge(6, 4);
+  addDirectedEdge(6, 0);
+  addDirectedEdge(6, 2);
+  addDirectedEdge(7, 3);
+  addDirectedEdge(7, 5);
+
+  return adj;
+}
