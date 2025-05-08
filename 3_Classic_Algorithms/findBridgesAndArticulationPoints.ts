@@ -3,7 +3,7 @@
  * Bridges are edges that when separated would sever the graph into two or more subgraphs.
  * Articulation points are nodes that when removed would sever the graph into two or more subgraphs.
  */
-import { createGraphForBridgeArticulationPoint } from "./3_Classic_Algorithms/graphs.ts"
+import { createGraphForBridgeArticulationPoint } from "./graphs.ts"
 
 interface Bridge {
   from: number;
