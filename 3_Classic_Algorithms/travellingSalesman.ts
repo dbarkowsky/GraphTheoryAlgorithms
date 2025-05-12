@@ -3,6 +3,8 @@
  * The concept for this one is straighforward. We get the distance between all nodes.
  * For each node, we visit their neighbours and get the distance to the next node.
  * We do this recursively until we visit all nodes and have the minimum distance.
+ * By storing the min distance for a subset of nodes, we can avoid recalculating the same distance.
+ * Essentially, we know the distance between subsets, so we can use that to calculate the distance for the next node.
  * 
  * The complex part is the bitmasking. We use a bitmask to represent the visited nodes.
  * For example, if we have 4 nodes, we can represent the visited nodes as a binary number. 
