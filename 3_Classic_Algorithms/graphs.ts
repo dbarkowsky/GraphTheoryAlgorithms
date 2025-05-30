@@ -125,3 +125,32 @@ export const createGraphForTravellingSalesman = () => {
   addInfinityEdge(7);
   return adj;
 }
+
+/**
+ * Creates a directed graph for Eulerian Path algorithm.
+ * The graph is represented as an adjacency list, where each index represents a node and the value at that index is an array of its neighbors.
+ * @returns A directed graph with 6 nodes and edges between them.
+ */
+export const createGraphForEulerian = () => {
+  const V = 6;
+  const adj: number[][] = Array.from({ length: V }, () => []);
+
+  function addDirectedEdge(u: number, v: number) {
+    adj[u].push(v);
+  }
+
+  addDirectedEdge(0, 1);
+  addDirectedEdge(0, 2);
+  addDirectedEdge(1, 1);
+  addDirectedEdge(1, 3);
+  addDirectedEdge(1, 3);
+  addDirectedEdge(2, 0);
+  addDirectedEdge(2, 1);
+  addDirectedEdge(2, 4);
+  addDirectedEdge(3, 2);
+  addDirectedEdge(3, 5);
+  addDirectedEdge(4, 5);
+  addDirectedEdge(5, 2);
+
+  return adj;
+}
