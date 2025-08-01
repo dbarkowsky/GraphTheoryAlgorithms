@@ -4,6 +4,7 @@ import { WeightedEdge, createMinimumSpanningTreeGraph } from './graph.ts'
  * Kruskal's Minimum Spanning Tree
  * Finds the path that connects all nodes in a graph with the lowest total cost of edges.
  * Creates a subgraph that contains no cycles.
+ * Does this by grouping nodes effectively based on low-cost edges. These groups are combined until only a single group remains.
  */
 const kruskalsMinimumSpanningTree = (graph: WeightedEdge[][]) => {
   // We'll start with the lowest-cost edges

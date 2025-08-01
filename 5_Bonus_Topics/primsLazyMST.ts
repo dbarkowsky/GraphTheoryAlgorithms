@@ -1,6 +1,7 @@
 import { WeightedEdge, createMinimumSpanningTreeGraph } from './graph.ts'
 
 /**
+ * Prim's Lazy Minimum Spanning Tree
  * An algorithm that finds a minimum spanning tree subgraph in a larger graph.
  * It expects that there are no nodes completely separated from the graph.
  * This would be better with an adjacency matrix, but we use adjacency list.
