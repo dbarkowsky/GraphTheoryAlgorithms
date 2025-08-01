@@ -67,5 +67,5 @@ const primsMinimumSpanningTreeLazy = (graph: WeightedEdge[][], startingIndex = 0
 }
 
 
-const result = primsMinimumSpanningTreeLazy(createMinimumSpanningTreeGraph());
+const result = primsMinimumSpanningTreeLazy(createMinimumSpanningTreeGraph(true));
 console.assert(result.mstCost === 20);

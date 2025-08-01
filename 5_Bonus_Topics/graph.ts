@@ -9,8 +9,9 @@ export class WeightedEdge {
 /**
  * Builds a 2D array with weighted edge values. 
  * Each index of the top array is a node.
+ * Optional double linked nodes for reverse path traversal.
  */
-export const createMinimumSpanningTreeGraph = () => {
+export const createMinimumSpanningTreeGraph = (doubleLink = false) => {
   const graph = Array(8);
   for (let i = 0; i < graph.length; i++) {
     graph[i] = [];
@@ -24,11 +25,12 @@ export const createMinimumSpanningTreeGraph = () => {
       weight
     } as WeightedEdge);
     // And a reverse edge
-    graph[to].push({
-      from: to,
-      to: from,
-      weight
-    } as WeightedEdge);
+    if (doubleLink)
+      graph[to].push({
+        from: to,
+        to: from,
+        weight
+      } as WeightedEdge);
   }
 
   addEdge(0, 1, 10)
