@@ -10,6 +10,7 @@ import { IndexedPriorityQueue } from "./IndexedPriorityQueue.ts";
  */
 const primsMinimumSpanningTreeEager = (graph: WeightedEdge[][], startingIndex = 0) => {
   // Priority queue because we need to always take the lowest weight path
+  // This is the real key to making this work, and it's a beast on its own.
   const priorityQueue: IndexedPriorityQueue = new IndexedPriorityQueue();
   // We won't be visiting any node twice.
   const visited = Array(graph.length).fill(false);
