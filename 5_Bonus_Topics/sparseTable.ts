@@ -4,7 +4,7 @@
  * This particular implementation is focused on finding the minimum value in a range.
  * @param {number[]} arr - The input array for which the sparse table is built.
  */
-const sparseTable = (arr: number[]) => {
+export const sparseTable = (arr: number[]) => {
   const n = arr.length;
   // Calculate the maximum power of 2 needed
   const P = Math.floor(Math.log2(n)); 
